@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-fixed relative flex justify-center items-center min-h-screen p-4 font-montserrat before:content-[''] before:absolute before:inset-0 before:bg-black/60 before:z-0" 
+      style="background-image: url('img/nature_bg.png');">
+
+    <div class="relative z-10 bg-[#f5f5f5] rounded-[40px] shadow-2xl overflow-hidden max-w-sm w-full p-8 md:p-10 flex flex-col items-center text-center">
+        
+        <div class="w-16 h-16 bg-[oklch(62.3%_0.214_259.815)] rounded-full flex items-center justify-center mb-6 shadow-md">
+            <i class="fa-brands fa-discord text-3xl text-white"></i>
+        </div>
+
+        <h1 class="text-1xl font-montserrat font-bold tracking-widest text-black uppercase mb-2">
+            My Discord user is:
+        </h1>
+
+        <button onclick="copyDiscord()" id="copyBtn" class="relative w-full flex items-center justify-center gap-4 bg-white border-2 border-gray-300 hover:border-black text-black py-4 rounded-2xl transition-all hover:scale-110 active:scale-95 shadow-sm group mb-8 cursor-pointer">
+            <span class="font-bold tracking-widest text-lg">malu4662</span>
+            
+            <i id="copyIcon" class="fa-regular fa-copy text-gray-500 group-hover:text-black transition-colors"></i>
+            
+            <span id="tooltip" class="absolute -top-10 bg-black text-white text-xs font-bold py-1.5 px-3 rounded-md opacity-0 transition-opacity duration-300 pointer-events-none">
+                Copied!
+                <svg class="absolute text-black h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
+            </span>
+        </button>
+
+        <div class="flex w-full justify-center">
+            <a href="index.html" class="flex-1 max-w-[160px] flex items-center justify-center gap-3 border-2 border-black rounded-full py-3 text-black font-bold hover:bg-[#333333] hover:text-white transition-all hover:scale-110 active:scale-95 shadow-md group">
+                <i class="fa-solid fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
+                <span class="text-sm tracking-widest uppercase">Back</span>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        function copyDiscord() {
+            navigator.clipboard.writeText("malu4662");
+            document.getElementById('tooltip').classList.replace('opacity-0', 'opacity-100');
+            setTimeout(() => document.getElementById('tooltip').classList.replace('opacity-100', 'opacity-0'), 2000);
+        }
+    </script>
+
+</body>
+</html>

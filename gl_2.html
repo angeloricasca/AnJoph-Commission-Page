@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Goliath — my best friend</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #06070a;
+  --fg: #eaeaf0;
+  --accent: #7fd3ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0d1220, #02030a);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 3rem 1rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.scale-bar {
+  margin: 2rem auto;
+  width: 40px;
+  height: 300px;
+  background: linear-gradient(to top, #111, #333);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.scale-fill {
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to top, var(--accent), white);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+input[type=range] {
+  width: 80%;
+}
+
+.label {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.rumble {
+  animation: rumble 0.15s infinite;
+}
+
+@keyframes rumble {
+  0% { transform: translate(1px, 1px); }
+  25% { transform: translate(-1px, 0); }
+  50% { transform: translate(0, -1px); }
+  75% { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+button {
+  background: none;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin: 0.3rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(127,211,255,0.1);
+}
+
+.too-big {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+footer {
+  padding: 2rem;
+  opacity: 0.4;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Goliath</h1>
+  <div class="subtitle">my best friend</div>
+</header>
+
+<section>
+  <p>
+    People ask how big he is.<br>
+    This is the closest I can get.
+  </p>
+
+  <div class="scale-bar">
+    <div id="scaleFill" class="scale-fill"></div>
+  </div>
+
+  <input type="range" min="1" max="6" value="1" oninput="updateScale(this.value)">
+  <div id="scaleLabel" class="label">Malu</div>
+</section>
+
+<section>
+  <h2>Goliath’s emotions</h2>
+  <p>He feels like a boy. The universe reacts.</p>
+
+  <button onclick="emotion('calm')">😐 Calm</button>
+  <button onclick="emotion('happy')">😁 Happy</button>
+  <button onclick="emotion('embarrassed')">😳 Embarrassed</button>
+  <button onclick="emotion('sad')">😢 Sad</button>
+
+  <p id="emotionText" style="margin-top:1rem; color:var(--accent);"></p>
+</section>
+
+<section class="too-big">
+  <h2>Can he see you?</h2>
+  <button onclick="notice()">Try to get his attention</button>
+  <p id="noticeText"></p>
+</section>
+
+<section>
+  <h2>Can you read his mind?</h2>
+  <p>No. And he won’t read yours.</p>
+  <button onclick="mind()">Try anyway</button>
+  <p id="mindText"></p>
+</section>
+
+<footer>
+  Made by Malu.<br>
+  Please don’t panic. He’s gentle.
+</footer>
+
+<script>
+const labels = [
+  "Malu",
+  "A house",
+  "A city",
+  "A country",
+  "A planet",
+  "Goliath"
+];
+
+function updateScale(v) {
+  const fill = document.getElementById("scaleFill");
+  const label = document.getElementById("scaleLabel");
+
+  fill.style.transform = "scaleY(" + (v * v) + ")";
+  label.textContent = labels[v - 1];
+
+  if (v >= 5) {
+    document.body.classList.add("rumble");
+    label.style.fontSize = "1.6rem";
+  } else {
+    document.body.classList.remove("rumble");
+    label.style.fontSize = "1.2rem";
+  }
+
+  if (v === 6) {
+    label.textContent = "You are thinking too small.";
+  }
+}
+
+function emotion(state) {
+  const text = document.getElementById("emotionText");
+  document.body.classList.remove("rumble");
+
+  switch (state) {
+    case "calm":
+      text.textContent = "Everything is stable. Goliath is breathing slowly.";
+      break;
+    case "happy":
+      text.textContent = "Minor tremors detected. He might be wiggling.";
+      document.body.classList.add("rumble");
+      break;
+    case "embarrassed":
+      text.textContent = "Temperature increased slightly. He is covering his face.";
+      document.body.classList.add("rumble");
+      break;
+    case "sad":
+      text.textContent = "Gravity feels heavier. Please be kind to him.";
+      break;
+  }
+}
+
+function notice() {
+  const t = document.getElementById("noticeText");
+  if (Math.random() < 0.05) {
+    t.textContent = "He noticed you. He is being very careful now.";
+  } else {
+    t.textContent = "No response. You are smaller than a thought.";
+  }
+}
+
+function mind() {
+  const t = document.getElementById("mindText");
+  t.textContent =
+    "Your thought bounced back gently. Goliath fixed your headache.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Commission</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-fixed relative flex justify-center py-12 px-4 min-h-screen font-montserrat before:content-[''] before:absolute before:inset-0 before:bg-black/60 before:z-0" 
+      style="background-image: url('img/nature_bg.png');">
+
+    <div class="relative z-10 bg-[#f5f5f5] rounded-[40px] shadow-2xl overflow-hidden max-w-2xl w-full h-fit p-8 md:p-12">
+        
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-montserrat tracking-wider text-black uppercase inline-block border-b-2 border-black pb-2">
+                Order Form
+            </h1>
+        </div>
+
+        <form action="#" method="POST" class="w-full flex flex-col gap-6">
+
+            <div class="flex flex-col gap-2">
+                <label for="name" class="font-bold text-lg tracking-wide ml-2">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" 
+                       class="w-full bg-white border-2 border-gray-300 rounded-2xl px-5 py-3 focus:outline-none focus:border-black transition-colors shadow-sm">
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-2 ml-2">
+                    <label for="email" class="font-bold text-lg tracking-wide">E-mail:</label>
+                    
+                    <div class="relative group">
+                        <i class="fa-solid fa-circle-info text-gray-400 hover:text-black cursor-help transition-colors text-lg"></i>
+                        
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-center shadow-xl z-20">
+                            Make sure your email is correct. If not, i won't be able to reply back.
+                            <svg class="absolute text-black h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="email" id="email" name="email" placeholder="your@email.com" 
+                    class="w-full bg-white border-2 border-gray-300 rounded-2xl px-5 py-3 focus:outline-none focus:border-black transition-colors shadow-sm">
+            </div>
+
+            <div class="flex flex-col gap-2 border-2 border-gray-300 rounded-2xl p-5 bg-white shadow-sm">
+                <span class="font-bold text-lg tracking-wide mb-2">Select Service</span>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="service" value="chibi" class="w-5 h-5 accent-black cursor-pointer">
+                        <span class="text-gray-700 font-medium group-hover:text-black transition-colors">Chibi</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="service" value="ref-sheet" class="w-5 h-5 accent-black cursor-pointer">
+                        <span class="text-gray-700 font-medium group-hover:text-black transition-colors">Ref Sheet</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="service" value="normal" class="w-5 h-5 accent-black cursor-pointer">
+                        <span class="text-gray-700 font-medium group-hover:text-black transition-colors">Normal</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="service" value="illustration" class="w-5 h-5 accent-black cursor-pointer">
+                        <span class="text-gray-700 font-medium group-hover:text-black transition-colors">Illustration</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2 relative">
+                <div class="flex items-center gap-2 ml-2">
+                    <label for="message" class="font-bold text-lg tracking-wide">Message:</label>
+                    
+                    <div class="relative group">
+                        <i class="fa-solid fa-circle-info text-gray-400 hover:text-black cursor-help transition-colors text-lg"></i>
+                        
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-center shadow-xl z-20">
+                            You can describe what you want.
+                            <svg class="absolute text-black h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <textarea id="message" name="message" rows="5" placeholder="Describe your request here..." 
+                          class="w-full bg-white border-2 border-gray-300 rounded-2xl px-5 py-3 focus:outline-none focus:border-black transition-colors shadow-sm resize-none"></textarea>
+            </div>
+
+            <div class="flex flex-row gap-4 w-full justify-center border-t border-gray-300 pt-8 mt-4">
+                
+                <a href="index.html" class="flex-1 max-w-[160px] flex items-center justify-center gap-3 border-2  rounded-full py-3 text-black font-bold hover:bg-[#333333] hover:text-white transition-all hover:scale-110 active:scale-95 shadow-md group">
+                    <i class="fa-solid fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="text-sm tracking-widest uppercase">Back</span>
+                </a>
+
+                <button type="submit" class="flex-1 max-w-[160px] flex items-center justify-center gap-3 border-2  rounded-full py-3 text-black font-bold hover:bg-[#333333] hover:text-white transition-all hover:scale-110 active:scale-95 shadow-md group cursor-pointer">
+                    <i class="fa-solid fa-paper-plane text-sm group-hover:translate-x-1 transition-transform"></i>
+                    <span class="text-sm tracking-widest uppercase">Send</span>
+                </button>
+
+            </div>
+
+        </form>
+        
+    </div>
+
+    <script src="js/order.js"></script>
+</body>
+</html>

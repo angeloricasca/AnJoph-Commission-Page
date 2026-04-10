@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chibis Commission Service</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-fixed relative flex justify-center min-h-screen py-12 px-4 font-montserrat before:content-[''] before:absolute before:inset-0 before:bg-black/60 before:z-0" 
+      style="background-image: url('img/nature_bg.png');">
+
+    <div class="relative z-10 bg-[#f5f5f5] rounded-[40px] shadow-2xl overflow-hidden max-w-3xl w-full h-fit">
+        
+        <div class="p-8 md:p-12 flex flex-col items-center text-black">
+            
+            <div class="mb-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-monserrat tracking-wider uppercase inline-block border-b-2 border-black pb-2">
+                    Chibis
+                </h1>
+            </div>
+
+            <p class="text-center md:text-left md:self-start text-lg font-montserrat font-medium mb-10 tracking-wide">
+                • Base Price <span class="font-bold">$35</span>
+            </p>
+
+            <div class="w-full max-w-2xl mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="aspect-square rounded-[25px] overflow-hidden shadow-lg">
+                        <img src="img/ch_1.PNG" alt="Chibi Example 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square rounded-[25px] overflow-hidden shadow-lg">
+                        <img src="img/ch_2.PNG" alt="Chibi Example 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="aspect-square rounded-[25px] overflow-hidden shadow-lg">
+                        <img src="img/ch_3.PNG" alt="Chibi Example 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square rounded-[25px] overflow-hidden shadow-lg">
+                        <img src="img/ch_4.PNG" alt="Chibi Example 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-lg mb-12">
+                <div class="rounded-[20px] overflow-hidden shadow-sm border border-gray-300 tracking-wider">
+                    <table class="w-full text-center font-montserrat text-sm md:text-base">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-800 font-bold uppercase tracking-wider">
+                                <th class="py-4 px-4">Aditionals</th>
+                                <th class="py-4 px-4 border-l border-gray-300">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-[#f5f5f5] text-gray-700 font-medium">
+                            <tr class="border-t border-gray-300">
+                                <td class="py-4 px-4 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paw text-xs opacity-70"></i> Pet / weapons
+                                </td>
+                                <td class="py-4 px-4 border-l border-gray-300">+$5</td>
+                            </tr>
+                            <tr class="border-t border-gray-300">
+                                <td class="py-4 px-4 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-image text-xs opacity-70"></i> Simple Background
+                                </td>
+                                <td class="py-4 px-4 border-l border-gray-300">No cost</td>
+                            </tr>
+                            <tr class="border-t border-gray-300">
+                                <td class="py-4 px-4 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-image text-xs opacity-70"></i> Extra character
+                                </td>
+                                <td class="py-4 px-4 border-l border-gray-300">+$10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-4 w-full justify-center border-t border-gray-300 pt-8">
+                
+                <a href="conmission.html" class="flex-1 max-w-[160px] flex items-center justify-center gap-3 border-2 rounded-full py-3 text-black font-bold hover:bg-[#333333] hover:text-white transition-all hover:scale-110 active:scale-95 shadow-md group">
+                    <i class="fa-solid fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="text-sm tracking-widest uppercase">Back</span>
+                </a>
+
+                <a href="order.html" class="flex-1 max-w-[160px] flex items-center justify-center gap-3 border-2 rounded-full py-3 text-black font-bold hover:bg-[#333333] hover:text-white transition-all hover:scale-110 active:scale-95 shadow-md group">
+                    <i class="fa-solid fa-file-lines text-sm"></i>
+                    <span class="text-sm tracking-widest uppercase">Order</span>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

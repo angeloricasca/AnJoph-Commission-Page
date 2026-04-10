@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Message Length Validation
+        if (message.length > 1000) {
+            alert('Your message is too long. Please keep it under 1000 characters.');
+            return;
+        }
+
         // Basic Email Format Validation (Checks for @ and .)
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
